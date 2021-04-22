@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
-  export let type = undefined;
+  export let type: undefined | 'danger' = undefined;
   export let disabled = false;
 
   const dispatch = createEventDispatcher();

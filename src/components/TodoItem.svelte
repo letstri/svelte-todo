@@ -9,9 +9,9 @@
     if ($selection.includes(item.id)) {
       selection.remove(item.id);
     } else {
-      selection.add(item.id)
+      selection.add(item.id);
     }
-  }
+  };
 </script>
 
 <div

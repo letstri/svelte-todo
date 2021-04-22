@@ -13,11 +13,9 @@
   TODO
 </h1>
 <div class="header">
-  <div>
-    <TodoAdd />
-  </div>
-  <div>
-    {#if $list.length}
+  <TodoAdd />
+  {#if $list.length}
+    <div>
       <Button
         on:click={removeSelected}
         type="danger"
@@ -29,14 +27,14 @@
         {/if}
       </Button>
       <Button
-        on:click={list.removeAll}
-        type="danger"
+      on:click={list.removeAll}
+      type="danger"
       >
         Remove all
         ({$list.length})
       </Button>
-    {/if}
-  </div>
+    </div>
+  {/if}
 </div>
 
 {#if $list.length}

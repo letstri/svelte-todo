@@ -1,18 +1,17 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
-  let className = '';
   export let value = '';
   export let placeholder = '';
-  export { className as class };
 
   const dispatch = createEventDispatcher();
 
-  const onInput = (e: any) => {
-    value = e.target.value;
+  const onInput = (event: any) => {
+    value = event.target.value;
   };
-  const onKeydown = (e: KeyboardEvent) => {
-    if (e.code === 'Enter') {
+
+  const onKeydown = (event: KeyboardEvent) => {
+    if (event.code === 'Enter') {
       dispatch('enter');
     }
   };
@@ -22,7 +21,7 @@
   type="text"
   {value}
   {placeholder}
-  class={`input ${className}`}
+  class="input"
   on:input={onInput}
   on:keydown={onKeydown}
 >

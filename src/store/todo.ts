@@ -31,12 +31,6 @@ export const list = createList();
 const createSelection = () => {
   const { subscribe, update, set } = writable<Array<number>>([]);
 
-  list.subscribe((value) => {
-    const listIds = value.map((t) => t.id);
-
-    update((selection) => selection.filter((item) => listIds.includes(item)));
-  });
-
   return {
     subscribe,
     add: (id: number) => update((value) => [...value, id]),
